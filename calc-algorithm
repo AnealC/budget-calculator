@@ -1,0 +1,38 @@
+#------------------------------------------------------------------------------------------------|
+#  Copyright (c) 2022 by Aaron Neal Crawford                                                     |
+#------------------------------------------------------------------------------------------------|
+#  Purpose of Program:                                                                           |
+#  This program will help calculate a budget for the user                                        |
+#=================================================================================================
+# Data Dictionary                                                                                |
+#  Name                     Type          Range         Use                                      |
+#  ------                   -----         ----------    -----------------------------------------|
+#  finspend                 float/input   [0 - inf]     final spend based on input               |
+#  budget                   float/input   [0 - inf]     user input of budget                     |
+#  spend                    float/input   [0 - inf]     user input for itemized spending         |
+#=================================================================================================
+#  Functions used:                                                                               |
+#  Name     Inputs                Use                                                            |
+#  ------   -----------------     -------------------------------------------------------------- |
+#                                                                                                |
+#=================================================================================================
+
+# Variables
+finspend = 0
+budget = float(input('Please enter in your budget: '))
+spend = float(input('Input an amount spent (0 to quit)'))
+
+# Loop to calculate budget
+while spend != 0:
+    finspend += spend
+    spend = float(input('Enter an amount spent (0 to quit): '))
+# If over Budget, program will run this
+if finspend > budget:
+    print('Your budget is: $', format(budget, '.2f'), sep='')
+    print('Your final spend is: $', format(finspend, '.2f'), sep='')
+    print('You are $', format(finspend - budget, '.2f'), ' over budget.', ' PLAN BETTER NEXT TIME!', sep='')
+# If under budget program will run this
+elif finspend < budget:
+    print('Your budget is: $', format(budget, '.2f'), sep='')
+    print('Your final spend is: $', format(finspend, '.2f'), sep='',)
+    print('You are $', format(budget - finspend, '.2f'), ' under budget.', ' GREAT JOB!', sep='')
