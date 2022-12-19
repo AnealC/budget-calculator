@@ -1,0 +1,22 @@
+// Variables
+let finspend = 0;
+let budget = parseFloat(prompt('Please enter in your budget: '));
+let spend = parseFloat(prompt('Enter an amount spent (0 to quit)'));
+
+// Loop to calculate budget
+while (spend != 0) {
+    finspend += spend;
+    spend = parseFloat(prompt('Enter an amount spent (0 to quit): '));
+}
+// If over Budget, program will run this
+if (finspend > budget) {
+    console.log(`Your budget is: $${budget.toFixed(2)}`);
+    console.log(`Your final spend is: $${finspend.toFixed(2)}`);
+    console.log(`You are $${(finspend - budget).toFixed(2)} over budget. PLAN BETTER NEXT TIME!`);
+}
+// If under budget program will run this
+else if (finspend < budget) {
+    console.log(`Your budget is: $${budget.toFixed(2)}`);
+    console.log(`Your final spend is: $${finspend.toFixed(2)}`);
+    console.log(`You are $${(budget - finspend).toFixed(2)} under budget. GREAT JOB!`);
+}
